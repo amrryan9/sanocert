@@ -1,1 +1,1 @@
-# sanocert
+# SANOCERT
