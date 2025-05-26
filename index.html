@@ -12,12 +12,15 @@
       padding: 0;
     }
     header {
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+    }
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1em 2em;
-      background-color: white;
-      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
     }
     .logo {
       font-size: 16pt;
@@ -27,6 +30,27 @@
       font-style: italic;
       font-size: 14px;
       color: #444;
+    }
+    nav {
+      margin-top: 0.5em;
+    }
+    nav a {
+      margin-left: 1em;
+      text-decoration: none;
+      color: #004c8c;
+      font-weight: bold;
+    }
+    .hero {
+      background-image: url('banner.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 4em 2em;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: 2em;
     }
     main {
       padding: 2em;
@@ -43,6 +67,32 @@
     }
     ul {
       padding-left: 1.2em;
+    }
+    .project img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1em;
+      border-radius: 4px;
+    }
+    form {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    input, textarea {
+      padding: 0.6em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+    button {
+      background-color: #004c8c;
+      color: white;
+      padding: 0.6em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
     footer {
       margin-top: 3em;
@@ -62,15 +112,37 @@
       padding: 0.4em 1em;
       border-radius: 4px;
     }
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1em;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">SANOCERT</div>
-    <div class="tagline">Wireless Solutions</div>
+    <div class="navbar">
+      <div class="logo">SANOCERT</div>
+      <div class="tagline">Wireless Solutions</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <div class="hero">
+    <h1>Innovative Wireless Control Systems</h1>
+    <p>Empowering operations from the rig floor to the skies</p>
+  </div>
+
+  <main id="home">
     <section>
       <h2>Current Project – Remote Winch Control System</h2>
       <p>
@@ -78,25 +150,41 @@
         Designed for harsh rig environments, it delivers plug-and-play remote operation with operator-focused
         safety and ease of use.
       </p>
+      <img src="p1.jpg" alt="Winch Project">
       <div class="download-links">
         <a href="/Brochure.pdf" target="_blank">Download Brochure</a>
         <a href="/Operating_Instructions2.pdf" target="_blank">Download Operating Manual</a>
       </div>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Other Projects in Wireless Solutions</h2>
-      <h3>UAV Communications</h3>
-      <p>
-        A research initiative exploring UAV trajectory design and mission planning to improve wireless link performance
-        in both point-to-point and cellular networks—especially in urban environments.
-      </p>
+      <div class="project">
+        <h3>UAV Communications</h3>
+        <p>
+          A research initiative exploring UAV trajectory design and mission planning to improve wireless link performance
+          in both point-to-point and cellular networks—especially in urban environments.
+        </p>
+        <img src="p2.jpg" alt="UAV Project">
+      </div>
+      <div class="project">
+        <h3>Cell-Free Networks <small>(Coming Soon)</small></h3>
+        <p>
+          An early-stage exploration of cell-free wireless deployments in dense or irregularly loaded spaces—like stadiums
+          during events, or uncovered public areas.
+        </p>
+        <img src="p3.jpg" alt="Cell-Free Project">
+      </div>
+    </section>
 
-      <h3>Cell-Free Networks <small>(Coming Soon)</small></h3>
-      <p>
-        An early-stage exploration of cell-free wireless deployments in dense or irregularly loaded spaces—like stadiums
-        during events, or uncovered public areas.
-      </p>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form action="mailto:wireless@sanocert.org" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </section>
   </main>
 
