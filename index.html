@@ -177,15 +177,25 @@
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form action="mailto:wireless@sanocert.org" method="POST" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+   <section id="contact">
+  <h2>Contact Us</h2>
+  <form action="https://formsubmit.co/wireless@sanocert.org" method="POST">
+    <!-- Your Name -->
+    <input type="text" name="name" placeholder="Your Name" required>
+    <!-- Your Email -->
+    <input type="email" name="email" placeholder="Your Email" required>
+    <!-- Your Message -->
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <!-- Optional: Redirect to a thank you page -->
+    <input type="hidden" name="_next" value="https://sanocert.org/thankyou.html">
+    <!-- Optional: Prevent spam (invisible field bots may fill) -->
+    <input type="text" name="_honey" style="display:none">
+    <!-- Optional: Disable captcha if you want (not recommended for public sites) -->
+    <!-- <input type="hidden" name="_captcha" value="false"> -->
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
   </main>
 
   <footer>
